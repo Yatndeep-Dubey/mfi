@@ -35,39 +35,17 @@ const cards=[
 
 
 const Subscription = () => {
-  const [menuActive, setMenuActive] = React.useState(false);
+  const [menuActive, setMenuActive] = React.useState(true);
 
   return (
+    <>
+    <Sidebar/>
     <div className="w-full min-h-screen pb-10 overflow-hidden">
-      <div className=" relative bg-white flex flex-col text-white py-2  pl-[9%]">
+      <div className=" relative bg-white flex flex-col text-white py-2 pl-[12%]  sm:pl-[9%]">
         <img src="/assets/logo.png" className="w-[110px]  object-contain" />
       </div>
       <div className=" relative bg-[#402B6E] flex flex-col text-white py-3 items-center justify-center">
-        {/* mobile menu ----------------------------------------------------------------------------- */}
-        <div
-          onClick={() => {
-            setMenuActive(true);
-          }}
-          className="lg:hidden absolute left-0 text-black z-30 bg-[#ECBC76] top-3 sm:top-0 py-1 cursor-pointer px-2"
-        >
-          <img
-            src="/assets/menu.png"
-            className="lg:hidden w-[20px] h-[20px] object-contain"
-          />
-        </div>
-        {/* mobile menu ----------------------------------------------------------------------------- */}
-        <div className="h-full w-fit absolute left-0 top-0 flex items-center justify-center">
-        {/* {menuActive && ( */}
-          <div
-            onClick={() => {
-              setMenuActive(false);
-            }}
-            className="w-screen h-screen  z-30 relative"
-          >
-            {menuActive && <Sidebar />}
-          </div>
-        {/* // )} */}
-      </div>
+       
         <h2 className="font-[700] text-[23px] lg:text-[27px]">
           Choose Your Plan
         </h2>
@@ -86,7 +64,7 @@ const Subscription = () => {
           {cards.map((e,index)=>{return(
 
             <div key={index} className={`bg-[${e.bg}] shadow-sm shadow-black  rounded-[7px] px-2 py-1 max-w-[200px]`}>
-<p className="text-[#402B6E] text-[32px] font-[700]">{e.name}c</p>
+<p className="text-[#402B6E] text-[32px] font-[700]">{e.name}</p>
 <p className="text-black text-[22px] font-[700]">{e.price}</p>
 <p className="text-black text-[15px] ">{e.desc}</p>
 <p className="text-black text-[15px] ">1 Years</p>
@@ -129,7 +107,7 @@ Get Started
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
