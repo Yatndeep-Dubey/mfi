@@ -5,6 +5,9 @@ import {
 import Dashboard from './pages/Dashboard';
 import Subscription from './pages/Subscription';
 import Home from './pages/Home';
+import Home2 from './pages/Home2';
+import Users from './pages/Users';
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>}></Route>
         <Route path='/subscription' element={<Subscription/>}></Route>
         <Route path='/Home' element={<Home/>}></Route>
+        <Route path='/home2' element={<Home2/>}></Route>
+        <Route path='/users' element={<Users/>}></Route>
+        
        </Routes>
     </div>
   );

@@ -34,19 +34,42 @@ const Sidemenu = [
   },
 ];
 const Sidebar = () => {
+  const [menuActive, setMenuActive] = React.useState(false);
+
   return (
-    <div className="h-fit py-8 w-[60px] bg-[#ECBC76] gap-7 flex flex-col rounded-full z-50 mx-10 ">
-      {Sidemenu.map((e, index) => {
-        return (
-          <a href={e.href} key={index} className="">
-            <div className="flex flex-col items-center justify-center  ">
-              <img src={e.img} className="w-[20px] h-[20px] object-contain" />
-              <p className="text-sm">{e.title}</p>
-            </div>
-          </a>
-        );
-      })}
-    </div>
+    <>
+      <div
+        onClick={() => {
+          {menuActive ?
+            setMenuActive(false)
+          :  setMenuActive(true)
+          }
+        }}
+        className="lg:hidden pr-2 left-0 text-black w-fit bg-[#ECBC76] absolute top-[5%] z-50  py-1 cursor-pointer px-2"
+      >
+        <img
+          src="/assets/menu.png"
+          className="lg:hidden w-[20px] h-[20px] object-contain"
+        />
+      </div>
+
+      <div
+        className={`h-fit py-8 w-[60px] absolute top-[12%] bg-[#ECBC76] gap-7 ${
+          menuActive ? "flex" : "hidden"
+        }  lg:flex flex-col rounded-full z-50 mx-10 `}
+      >
+        {Sidemenu.map((e, index) => {
+          return (
+            <a href={e.href} key={index} className="">
+              <div className="flex flex-col items-center justify-center  ">
+                <img src={e.img} className="w-[20px] h-[20px] object-contain" />
+                <p className="text-sm">{e.title}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
