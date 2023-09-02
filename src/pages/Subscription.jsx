@@ -50,7 +50,7 @@ const Subscription = () => {
           Choose Your Plan
         </h2>
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col  lg:ml-[10%] lg:w-[90%] items-center justify-center">
         <p className=" text-[12.5px] sm:text-[14px] w-[80%] text-center lg:text-[16.5px] sm:mt-1">
           MFI Movers and Packers offers a comprehensive subscription plan
           tailored to meet the needs of individuals and businesses looking for
